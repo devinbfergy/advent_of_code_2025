@@ -49,15 +49,24 @@ func main() {
 		}
 		switch direction {
 		case "L":
-			startingSpot = startingSpot - moves
+			for moves != 0 {
+				moves -= 1
+				startingSpot -= 1
+				startingSpot = modOneHundred(startingSpot)
+				if startingSpot == 0 {
+					zeroCount += 1
+				}
+			}
 		case "R":
-			startingSpot = startingSpot + moves
-		}
-		startingSpot = modOneHundred(startingSpot)
-		if startingSpot == 0 {
-			zeroCount = zeroCount + 1
+			for moves != 0 {
+				moves -= 1
+				startingSpot += 1
+				startingSpot = modOneHundred(startingSpot)
+				if startingSpot == 0 {
+					zeroCount += 1
+				}
+			}
 		}
 	}
-
 	fmt.Printf("The password is %d\n", zeroCount)
 }
