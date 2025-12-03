@@ -89,7 +89,7 @@ func (s *Set) Size() int {
 }
 
 func main() {
-	lines, err := readInput("input2.txt")
+	lines, err := readInput("input.txt")
 	if err != nil {
 		log.Fatalf("input readlines error: %s", err)
 	}
